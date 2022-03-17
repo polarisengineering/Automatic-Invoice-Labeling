@@ -1,0 +1,1 @@
+# Template project structure for python projects
