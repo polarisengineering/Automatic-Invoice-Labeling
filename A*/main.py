@@ -117,9 +117,9 @@ class AStar_Solver: #è un solver di A* assolutamente generico che può essere u
 if __name__ == "__main__": #main function che raccoglie i dati dalle righe fatture e dalla prima nota e applica A* nel caso
     #specifico in cui la ricerca sia fatta nello spazio delle righe fatture (State_Conti)
 
-    righe_tot = pd.read_excel('/Users/bernardopanichi/Desktop/pseudo_labels.xlsx')
+    righe_tot = pd.read_excel('../pseudo_labels.xlsx')
     righe_tot = righe_tot.drop('Unnamed: 0', axis=1)
-    prima_nota_tot = pd.read_excel('/Users/bernardopanichi/Desktop/Progetto Prime Office/Dataset utili/prima nota/df_row.xlsx')
+    prima_nota_tot = pd.read_excel('../df_row.xlsx')
     numeri_fattura = list(np.unique(righe_tot.Numero))
     to_remove = []
 
@@ -153,7 +153,7 @@ if __name__ == "__main__": #main function che raccoglie i dati dalle righe fattu
             #grouped2 = a.path[-1].groupby('Conto').sum()
             #print(grouped2)
         print(righe_tot.head(50))
-    righe_tot.to_excel('/Users/bernardopanichi/Desktop/pseudo_labels_validated.xlsx')
+    #righe_tot.to_excel('/Users/bernardopanichi/Desktop/pseudo_labels_validated.xlsx')
 
 #le pseudo-labels sono ora validate col confronto con gli ammontari in prima nota. Quindi, a meno di casi rarissimi in cui
 #diverse combinazioni di righe diano lo stesso ammontare, possono essere ritenute affidabili per il training.
